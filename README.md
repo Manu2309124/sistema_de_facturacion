@@ -20,26 +20,30 @@ Un sistema de facturación backend desarrollado con **Python**, **Flask** y arqu
 ## Instalación
 
 1. **Clonar el repositorio**
+
 ```bash
 git clone <repository-url>
 cd prompting
 ```
 
 2. **Crear entorno virtual**
+
 ```bash
 python -m venv venv
 source venv/Scripts/activate  # En Windows
 ```
 
 3. **Instalar dependencias**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. **Configurar variables de entorno**
-Editar el archivo `.env` con tu configuración
+   Editar el archivo `.env` con tu configuración
 
 5. **Ejecutar la aplicación**
+
 ```bash
 python run.py
 ```
@@ -84,6 +88,7 @@ prompting/
 ## Endpoints de la API
 
 ### Clientes
+
 - `POST /api/customers` - Crear cliente
 - `GET /api/customers` - Obtener todos
 - `GET /api/customers/<id>` - Obtener por ID
@@ -91,6 +96,7 @@ prompting/
 - `DELETE /api/customers/<id>` - Eliminar
 
 ### Productos
+
 - `POST /api/products` - Crear producto
 - `GET /api/products` - Obtener todos
 - `GET /api/products/<id>` - Obtener por ID
@@ -98,6 +104,7 @@ prompting/
 - `DELETE /api/products/<id>` - Eliminar
 
 ### Facturas
+
 - `POST /api/invoices` - Crear factura
 - `GET /api/invoices` - Obtener todas
 - `GET /api/invoices/<id>` - Obtener por ID
@@ -106,6 +113,7 @@ prompting/
 - `PUT /api/invoices/<id>/issue` - Emitir factura
 
 ### Pagos
+
 - `POST /api/payments` - Registrar pago
 - `GET /api/payments/<id>` - Obtener pago
 - `GET /api/payments/invoice/<invoice_id>` - Pagos de factura
@@ -114,6 +122,7 @@ prompting/
 ## Ejemplo de Uso
 
 ### Crear Cliente
+
 ```bash
 curl -X POST http://localhost:5000/api/customers \
   -H "Content-Type: application/json" \
@@ -129,6 +138,7 @@ curl -X POST http://localhost:5000/api/customers \
 ```
 
 ### Crear Producto
+
 ```bash
 curl -X POST http://localhost:5000/api/products \
   -H "Content-Type: application/json" \
@@ -143,6 +153,7 @@ curl -X POST http://localhost:5000/api/products \
 ```
 
 ### Crear Factura
+
 ```bash
 curl -X POST http://localhost:5000/api/invoices \
   -H "Content-Type: application/json" \
@@ -163,11 +174,13 @@ curl -X POST http://localhost:5000/api/invoices \
 ## Testing
 
 Ejecutar tests:
+
 ```bash
 pytest tests/
 ```
 
 Con cobertura:
+
 ```bash
 pytest --cov=app tests/
 ```
@@ -175,6 +188,7 @@ pytest --cov=app tests/
 ## Configuración
 
 El archivo `.env` contiene:
+
 - `FLASK_APP`: Punto de entrada
 - `FLASK_ENV`: Entorno (development/testing/production)
 - `SECRET_KEY`: Clave secreta
