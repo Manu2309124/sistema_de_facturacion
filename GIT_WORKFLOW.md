@@ -7,12 +7,14 @@ Este proyecto usa **Git Flow** como estrategia de branching. Las ramas principal
 ### Ramas Permanentes
 
 #### `main` (Producción)
+
 - **Propósito**: Código estable listo para producción
 - **Protección**: Cambios solo mediante Pull Requests desde `develop`
 - **Versiones**: Etiquetadas con tags (v1.0.0, v1.1.0, etc.)
 - **Acceso**: Solo cambios desde `develop` después de testing
 
 #### `develop` (Desarrollo)
+
 - **Propósito**: Integración continua de features
 - **Estado**: Código funcional pero en desarrollo
 - **Uso**: Rama base para features y bugfixes
@@ -22,6 +24,7 @@ Este proyecto usa **Git Flow** como estrategia de branching. Las ramas principal
 ### Ramas Temporales
 
 #### `feature/*` (Nuevas Funcionalidades)
+
 ```bash
 # Crear feature desde develop
 git checkout develop
@@ -39,11 +42,13 @@ git push -u origin feature/nombre-feature
 ```
 
 Ejemplos:
+
 - `feature/sistema-pagos`
 - `feature/reportes-pdf`
 - `feature/autenticacion`
 
 #### `bugfix/*` (Correcciones)
+
 ```bash
 # Crear bugfix desde develop
 git checkout develop
@@ -61,10 +66,12 @@ git push -u origin bugfix/nombre-bugfix
 ```
 
 Ejemplos:
+
 - `bugfix/error-calculos`
 - `bugfix/conexion-bd`
 
 #### `hotfix/*` (Correcciones Críticas en Producción)
+
 ```bash
 # Crear hotfix desde main (¡IMPORTANTE!)
 git checkout main
@@ -83,6 +90,7 @@ git push -u origin hotfix/nombre-hotfix
 ```
 
 Ejemplos:
+
 - `hotfix/seguridad-critica`
 - `hotfix/error-facturacion`
 
@@ -268,6 +276,7 @@ Remotas:
    - Sin errores críticos
 
 4. **Tags en `main` para versiones**
+
    ```bash
    git tag -a v1.0.0 -m "Versión 1.0.0 - Inicial"
    git push origin v1.0.0

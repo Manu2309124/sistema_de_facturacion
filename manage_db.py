@@ -16,7 +16,9 @@ app = create_app(env)
 def init_database():
     """Inicializa la base de datos desde cero"""
     print(f"\n🔧 Inicializando base de datos en modo {env}...")
-    init_db(app)
+    with app.app_context():
+        db.create_all()
+        print("✓ Base de datos inicializada correctamente")
 
 
 def seed_database():
